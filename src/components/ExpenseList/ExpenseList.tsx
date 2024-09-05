@@ -7,12 +7,12 @@ interface ExpenseListProps {
 
 function ExpenseList({ expenses }: ExpenseListProps) {
   return (
-    <div>
+    <div className='expense-list'>
       <h2>Expense List</h2>
       <ul>
         {expenses.map((expense, index) => (
           <li key={index}>
-            {expense.name} - ${expense.amount} - {expense.category}
+            {expense.name} - ${expense.amount} - {expense.category} - {expense.date}
           </li>
         ))}
       </ul>

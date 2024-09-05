@@ -10,6 +10,7 @@ function NewExpenseForm({ onNewExpense }: NewExpenseFormProps) {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState('No category');
+  const [date, setDate] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -19,6 +20,7 @@ function NewExpenseForm({ onNewExpense }: NewExpenseFormProps) {
       name,
       amount,
       category,
+      date,
     };
 
     onNewExpense(newExpense);  
@@ -27,9 +29,11 @@ function NewExpenseForm({ onNewExpense }: NewExpenseFormProps) {
     setName('');
     setAmount(0);
     setCategory('No category');
+    setDate('');
   };
 
   return (
+    <div className='new-expense'>
     <form onSubmit={handleSubmit}>
       <label>
         Name:
@@ -57,8 +61,16 @@ function NewExpenseForm({ onNewExpense }: NewExpenseFormProps) {
           <option value="pet">Pet</option>
         </select>
       </label>
+      <label>
+        Date:
+        <input 
+          type="date" 
+          value={date} 
+          onChange={(e) => setDate(e.target.value)}
+        />
+      </label>
       <button type="submit">Add Expense</button>
-    </form>
+    </form></div>
   );
 }
 

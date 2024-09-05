@@ -17,8 +17,8 @@ function BudgetInput({ budget, setBudget }: BudgetInputProps) {
   };
 
   return (
-    <div>
-      <label htmlFor="budget">Define Budget:</label>
+    <div className='budget-input'>
+      <label>Define Budget:</label>
       <input
         type="number"
         id="budget"

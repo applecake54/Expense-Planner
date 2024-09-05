@@ -7,8 +7,8 @@ interface CategoryFilterProps {
 
 function CategoryFilter({ filter, onFilterChange }: CategoryFilterProps) {
   return (
-    <div>
-      <label htmlFor="category-filter">Filter categories:</label>
+    <div className="filters">
+      <label >Filter categories:</label>
       <select 
         id="category-filter" 
         value={filter} 
